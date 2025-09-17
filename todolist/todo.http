@@ -1,0 +1,45 @@
+### 전체 조회
+GET http://localhost:8080/api/todos
+Content-Type: application/json
+
+###
+
+### 제목 검색
+GET http://localhost:8080/api/todos?title=공부
+Content-Type: application/json
+
+###
+
+### 완료 여부 검색 (completed=true)
+GET http://localhost:8080/api/todos?completed=true
+Content-Type: application/json
+
+###
+
+### 기한 지난 Todo 조회
+GET http://localhost:8080/api/todos/overdue
+Content-Type: application/json
+
+###
+
+### Todo 생성
+POST http://localhost:8080/api/todos
+Content-Type: application/json
+
+{
+  "title": "새로운 할 일",
+  "description": "HTTP 파일 테스트",
+  "dueDate": "2030-01-01T23:59:59"
+}
+
+###
+
+### 완료 상태 변경 (id=1 예시)
+PUT http://localhost:8080/api/todos/1?completed=true
+Content-Type: application/json
+
+###
+
+### Todo 삭제 (id=1 예시)
+DELETE http://localhost:8080/api/todos/1
+Content-Type: application/json
